@@ -1,7 +1,18 @@
 ---
+const pageTitle = "Sobre mí";
 
+const identidad = {
+  nombre: "Matías",
+  pais: "México, cholula",
+  ocupacion: "Estudiante",
+  hobbies: ["leer", "videojuegos", "música"],
+};
+
+const habilidades = ["HTML", "CSS", "JavaScript", "Astro"];
+const feliz = true;
+const terminado = false;
+const meta = 3;
 ---
-
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -9,10 +20,26 @@
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
-		<h1>mi blog</h1>
+		<h1>{pageTitle}</h1>
+        <p>Aquí hay algunos datos sobre mí:</p>
+<ul>
+  <li>Mi nombre es {identidad.nombre}.</li>
+  <li>Vivo en {identidad.pais} y soy {identidad.ocupacion}.</li>
+  {identidad.hobbies.length >= 2 &&
+    <li>Dos de mis hobbies son: {identidad.hobbies[0]} y {identidad.hobbies[1]}</li>
+  }
+</ul>
+
+<p>Mis habilidades son:</p>
+<ul>
+  {habilidades.map((habilidad) => <li>{habilidad}</li>)}
+</ul>
+{feliz && <p>Estoy feliz de estar aprendiendo astro</p>}
+{terminado && <p>Ya termine este tutorial</p>}
+{meta === 3 ? <p>Mi meta es terminar hoy.</p> : <p>Mi meta no es en 2 días.</p>}
 	</body>
     <a href="/">Home</a>
 <a href="/about/">About</a>
