@@ -1,4 +1,5 @@
 ---
+import '../styles/global.css';
 const pageTitle = "Sobre mí";
 
 const identidad = {
@@ -12,6 +13,7 @@ const habilidades = ["HTML", "CSS", "JavaScript", "Astro"];
 const feliz = true;
 const terminado = false;
 const meta = 3;
+const colorHabilidad = "crimson";
 ---
 <html lang="en">
 	<head>
@@ -21,27 +23,37 @@ const meta = 3;
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
+		<style define:vars={{colorHabilidad}}>
+			h1 {
+				color: rgb(0, 48, 161);
+				font-size: 4rem;
+			}
+			.skill {
+				color: var(--colorHabilidad);
+				font-weight: bold;
+			}
+		</style>
 	</head>
 	<body>
+		<a href="/">Home</a>
+		<a href="/about/">About</a>
+		<a href="/blog/">Blog</a>
 		<h1>{pageTitle}</h1>
-        <p>Aquí hay algunos datos sobre mí:</p>
-<ul>
-  <li>Mi nombre es {identidad.nombre}.</li>
-  <li>Vivo en {identidad.pais} y soy {identidad.ocupacion}.</li>
-  {identidad.hobbies.length >= 2 &&
-    <li>Dos de mis hobbies son: {identidad.hobbies[0]} y {identidad.hobbies[1]}</li>
-  }
-</ul>
+		<p>Aquí hay algunos datos sobre mí:</p>
+		<ul>
+			<li>Mi nombre es {identidad.nombre}.</li>
+			<li>Vivo en {identidad.pais} y soy {identidad.ocupacion}.</li>
+			{identidad.hobbies.length >= 2 &&
+				<li>Dos de mis hobbies son: {identidad.hobbies[0]} y {identidad.hobbies[1]}</li>
+			}
+		</ul>
 
-<p>Mis habilidades son:</p>
-<ul>
-  {habilidades.map((habilidad) => <li>{habilidad}</li>)}
-</ul>
-{feliz && <p>Estoy feliz de estar aprendiendo astro</p>}
-{terminado && <p>Ya termine este tutorial</p>}
-{meta === 3 ? <p>Mi meta es terminar hoy.</p> : <p>Mi meta no es en 2 días.</p>}
+		<p>Mis habilidades son:</p>
+		<ul>
+			{habilidades.map((habilidad) => <li class="skill">{habilidad}</li>)}
+		</ul>
+		{feliz && <p>Estoy feliz de estar aprendiendo astro</p>}
+		{terminado && <p>Ya termine este tutorial</p>}
+		{meta === 3 ? <p>Mi meta es terminar hoy.</p> : <p>Mi meta no es en 2 días.</p>}
 	</body>
-    <a href="/">Home</a>
-<a href="/about/">About</a>
-<a href="/blog/">Blog</a>
 </html>
