@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import Navigation from '../components/Navigation.astro';
+import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 const pageTitle = "Sobre mí";
 
@@ -36,13 +36,8 @@ const colorHabilidad = "crimson";
 			}
 		</style>
 	</head>
-  <body>
-  <Navigation />
-  ...tu contenido...
-  <Footer />
-</body>
 	<body>
-    <Navigation />
+		<Header />
 		<h1>{pageTitle}</h1>
 		<p>Aquí hay algunos datos sobre mí:</p>
 		<ul>
@@ -60,5 +55,6 @@ const colorHabilidad = "crimson";
 		{feliz && <p>Estoy feliz de estar aprendiendo astro</p>}
 		{terminado && <p>Ya termine este tutorial</p>}
 		{meta === 3 ? <p>Mi meta es terminar hoy.</p> : <p>Mi meta no es en 2 días.</p>}
+		<Footer />
 	</body>
 </html>
