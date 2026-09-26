@@ -9,7 +9,6 @@ image:
   alt: 'El logo de Astro sobre un fondo oscuro con un brillo rosa.'
 tags: ["astro", "blog", "aprendiendo"]
 ---
-# Mi primer post
 
 Bienvenido a mi *nuevo blog* sobre aprender astro. Aqui compartire mi proceso mientras construyo un nuevo sitio web.
 
