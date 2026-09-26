@@ -2,7 +2,7 @@
 layout: ../../layouts/MarkdownPostLayout.astro
 title: 'Mi cuarto post'
 author: 'Matias'
-description: "¡Este post aparecerá solo!"
+description: "este post se supone que debe aparecer solo"
 image:
   url: "https://docs.astro.build/default-og-image.png"
   alt: "La palabra astro junto a una ilustración de planetas y estrellas."
